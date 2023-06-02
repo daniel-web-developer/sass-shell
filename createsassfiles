@@ -1,0 +1,13 @@
+#!/bin/bash
+
+mkdir scss
+mkdir scss/globals
+touch scss/style.scss
+echo "@forward 'globals';" >scss/style.scss
+
+touch scss/globals/_colours.scss
+touch scss/globals/_main.scss
+echo "@use 'typography' as *;" >scss/globals/_main.scss
+touch scss/globals/_typography.scss
+touch scss/globals/_index.scss
+echo "@forward 'main';\n@forward 'colours';\n@forward 'typography'" >scss/globals/_index
