@@ -7,7 +7,8 @@ echo "@forward 'globals';" > scss/style.scss
 
 touch scss/globals/_colours.scss
 touch scss/globals/_main.scss
-echo "@use 'typography' as *;" > scss/globals/_main.scss
+echo -e "@use 'typography' as *;\n\nhtml{\n\tbox-sizing: border-box;\n\tbox-sizing: border-box;\n}\n\n*, *::before, *::after{\n\tbox-sizing: inherit;\n}\n\nbody{\n\tmargin:0;\n\tpadding: 0;\n\tming-height: 100vh;\n\tmin-width: 100vw;\n}\n\n.flex{\n\tdisplay: flex;\n\n\t&-justcont-c{\n\t\tjustify-content: center;\n\t}\n\n\t&-justcont-sb{\n\t\tjustify-content: space-between;\n\t}\n\n\t&-alignit-c{\n\t\talign-items: center;\n\t}\n\n\t&-dir-col{\n\t\tflex-direction: column;\n\t}\n\n\t&-dir-col-rev{\n\t\tflex-direction: column-reverse;\n\t}\n}" > scss/globals/_main.scss
+
 touch scss/globals/_typography.scss
 touch scss/globals/_index.scss
 echo -e "@forward 'main';\n@forward 'colours';\n@forward 'typography'" > scss/globals/_index.scss
